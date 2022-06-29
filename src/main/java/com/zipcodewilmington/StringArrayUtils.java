@@ -32,11 +32,7 @@ public class StringArrayUtils {
      * @return last element in specified array
      */ // TODO
     public static String getLastElement(String[] array) {
-        String result = null;
-        if (array != null && array.length > 0) {
-            result = array[array.length - 1];
-        }
-        return result;
+        return array[array.length - 1];
     }
 
     /**
@@ -44,11 +40,7 @@ public class StringArrayUtils {
      * @return second to last element in specified array
      */ // TODO
     public static String getSecondToLastElement(String[] array) {
-        String result = null;
-        if (array != null && array.length > 0) {
-            result = array[array.length - 2];
-        }
-        return result;
+        return array[array.length - 2];
     }
 
     /**
@@ -126,6 +118,7 @@ public class StringArrayUtils {
      * @return array with identical contents excluding values of `value`
      */ // TODO
     public static String[] removeValue(String[] array, String valueToRemove) {
+
         String[] removedArray = new String[array.length - getNumberOfOccurrences(array, valueToRemove)];
         int index = 0;
         for (String element : array) {
@@ -175,12 +168,12 @@ public class StringArrayUtils {
                 removed.add(next);
             } else {
                 removed.add(array[i]);
-                }
             }
-            String[] combined = new String[removed.size()];
-            removed.toArray(combined);
-            return combined;
         }
-
+        String[] combined = new String[removed.size()];
+        removed.toArray(combined);
+        return combined;
     }
+
+}
 
